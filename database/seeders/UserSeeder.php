@@ -14,30 +14,30 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // Admin
+        // Super Admin
         User::create([
-            'name' => 'Admin Kedai Bunda',
+            'name' => 'Super Admin',
+            'email' => 'superadmin@kedaibunda.com',
+            'password' => Hash::make('superadmin123'),
+            'role' => 'super_admin',
+            'aktif' => true,
+        ]);
+
+        // Admin 1
+        User::create([
+            'name' => 'Admin Kedai',
             'email' => 'admin@kedaibunda.com',
             'password' => Hash::make('admin123'),
             'role' => 'admin',
             'aktif' => true,
         ]);
 
-        // Kasir 1
+        // Admin 2
         User::create([
-            'name' => 'Kasir 1',
-            'email' => 'kasir1@kedaibunda.com',
-            'password' => Hash::make('kasir123'),
-            'role' => 'kasir',
-            'aktif' => true,
-        ]);
-
-        // Kasir 2
-        User::create([
-            'name' => 'Kasir 2',
-            'email' => 'kasir2@kedaibunda.com',
-            'password' => Hash::make('kasir123'),
-            'role' => 'kasir',
+            'name' => 'Admin Kasir',
+            'email' => 'admin2@kedaibunda.com',
+            'password' => Hash::make('admin123'),
+            'role' => 'admin',
             'aktif' => true,
         ]);
     }
